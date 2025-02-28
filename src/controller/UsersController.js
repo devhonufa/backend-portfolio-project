@@ -11,7 +11,7 @@ export const Registration = async (req, res) => {
         let reqBody = req.body
         let result = await UsersModel.create(reqBody)
 
-        return res.status(200).json({ status: "success", "Message": "Registration", result })
+        return res.status(200).json({ status: "success", "Message": "Registration Seccessfully Done", result })
     }
     catch (err) {
         return res.status(200).json({ status: "error", "message": "internal server error", err });
@@ -35,7 +35,7 @@ export const Login = async (req, res) => {
         // ================token=======================================
         let token = TokenEncode(data['email'], data['_id']);
 
-        return res.status(200).json({ status: "success", "message": "Login", Token: token });
+        return res.status(200).json({ status: "success", "message": "Login Seccessfully Done", Token: token });
     }
     
     catch (err) {
@@ -43,4 +43,3 @@ export const Login = async (req, res) => {
     }
   
 }
-

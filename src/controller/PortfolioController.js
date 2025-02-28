@@ -56,7 +56,7 @@ export const DeletePortfolio = async(req,res)=>{
 
         let id = req.params.id;
         let user_id = req.headers['user_id']
-        let data = await TasksModel.deleteOne({ "_id": id, "user_id": user_id })
+        let data = await PortfolioModel.deleteOne({ "_id": id, "user_id": user_id })
         return res.status(200).json({ status: "success", "Message": "DeletePortfolio successfully", data: data })
     } catch (err) {
         return res.status(200).json({ status: "error", "message": "internal server error", err });
